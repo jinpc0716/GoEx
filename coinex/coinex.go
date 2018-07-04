@@ -2,15 +2,15 @@ package coinex
 
 import (
 	"encoding/json"
+	"errors"
 	"fmt"
-	. "github.com/nntaoli-project/GoEx"
+	. "github.com/leek-box/GoEx"
 	"log"
 	"net/http"
 	"net/url"
 	"sort"
 	"strings"
 	"time"
-	"errors"
 )
 
 type CoinEx struct {
@@ -20,7 +20,7 @@ type CoinEx struct {
 }
 
 var (
-	baseurl       = "https://api.coinex.com/v1/"
+	baseurl = "https://api.coinex.com/v1/"
 )
 
 func New(client *http.Client, accessKey, secretKey string) *CoinEx {
@@ -177,7 +177,31 @@ func (coinex *CoinEx) GetUnfinishOrders(currency CurrencyPair) ([]Order, error) 
 }
 
 func (coinex *CoinEx) GetOrderHistorys(currency CurrencyPair, currentPage, pageSize int) ([]Order, error) {
-	panic("not implement")
+	params := url.Values{}
+	params.Set("page", fmt.Sprint(currentPage))
+	params.Set("limit", fmt.Sprint(pageSize))
+	params.Set("market", currency.ToSymbol(""))
+
+	retmap, err := coinex.doRequest("GET", "order/finished", &params)
+	if err != nil {
+		return nil, err
+	}
+
+	//log.Println(retmap)
+
+	datamap, isok := retmap["data"].([]interface{})
+	if !isok {
+		log.Println(datamap)
+		return nil, errors.New("response format error")
+	}
+
+	var orders []Order
+	for _, v := range datamap {
+		vv := v.(map[string]interface{})
+		orders = append(orders, coinex.adaptOrder(vv, currency))
+	}
+
+	return orders, nil
 }
 
 func (coinex *CoinEx) GetAccount() (*Account, error) {
@@ -207,6 +231,17 @@ func (coinex *CoinEx) GetKlineRecords(currency CurrencyPair, period, size, since
 //非个人，整个交易所的交易记录
 func (coinex *CoinEx) GetTrades(currencyPair CurrencyPair, since int64) ([]Trade, error) {
 	panic("not implement")
+}
+
+func (coinex *CoinEx) GetMiningDifficulty() (*Miningdifficulty, error) {
+	retmap, err := coinex.doRequest("GET", "order/mining/difficulty", &url.Values{})
+	if err != nil {
+		return nil, err
+	}
+	md := new(Miningdifficulty)
+	md.Difficulty = ToFloat64(retmap["difficulty"])
+	md.Prediction = ToFloat64(retmap["prediction"])
+	return md, nil
 }
 
 func (coinex *CoinEx) doRequest(method, uri string, params *url.Values) (map[string]interface{}, error) {

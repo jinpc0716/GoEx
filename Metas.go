@@ -148,3 +148,8 @@ type FuturePosition struct {
 	ContractId     int64
 	ForceLiquPrice float64 //预估爆仓价
 }
+
+type Miningdifficulty struct {
+	Difficulty float64
+	Prediction float64
+}
