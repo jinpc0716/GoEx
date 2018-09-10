@@ -1,9 +1,10 @@
 package bitfinex
 
 import (
-	"github.com/nntaoli-project/GoEx"
 	"net/http"
 	"testing"
+
+	"github.com/leek-box/GoEx"
 )
 
 var bfx = New(http.DefaultClient, "", "")

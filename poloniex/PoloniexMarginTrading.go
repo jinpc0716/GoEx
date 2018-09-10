@@ -3,9 +3,10 @@ package poloniex
 import (
 	"encoding/json"
 	"errors"
-	. "github.com/nntaoli-project/GoEx"
 	"log"
 	"net/url"
+
+	. "github.com/leek-box/GoEx"
 )
 
 type PoloniexGenericResponse struct {

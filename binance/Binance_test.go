@@ -1,7 +1,7 @@
 package binance
 
 import (
-	"github.com/nntaoli-project/GoEx"
+	"github.com/leek-box/GoEx"
 	"net/http"
 	"testing"
 )

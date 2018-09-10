@@ -1,9 +1,10 @@
 package btcmarkets
 
 import (
-	"github.com/nntaoli-project/GoEx"
 	"net/http"
 	"testing"
+
+	"github.com/leek-box/GoEx"
 )
 
 var btcm = New(http.DefaultClient, "", "")

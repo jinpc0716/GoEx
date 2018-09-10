@@ -1,9 +1,10 @@
 package aex
 
 import (
-	"github.com/nntaoli-project/GoEx"
 	"net/http"
 	"testing"
+
+	"github.com/leek-box/GoEx"
 )
 
 var acx = New(http.DefaultClient, "", "", "")

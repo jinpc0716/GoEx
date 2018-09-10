@@ -6,7 +6,6 @@ import (
 	"encoding/json"
 	"errors"
 	"fmt"
-	. "github.com/nntaoli-project/GoEx"
 	"io/ioutil"
 	"log"
 	"net/http"
@@ -15,6 +14,8 @@ import (
 	"strings"
 	"sync"
 	"time"
+
+	. "github.com/leek-box/GoEx"
 )
 
 var HBPOINT = NewCurrency("HBPOINT", "")

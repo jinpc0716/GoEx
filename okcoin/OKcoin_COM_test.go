@@ -1,9 +1,10 @@
 package okcoin
 
 import (
-	"github.com/nntaoli-project/GoEx"
 	"net/http"
 	"testing"
+
+	"github.com/leek-box/GoEx"
 )
 
 var okcom = NewCOM(http.DefaultClient, "", "")

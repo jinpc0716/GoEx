@@ -1,9 +1,10 @@
 package btcbox
 
 import (
-	. "github.com/nntaoli-project/GoEx"
 	"net/http"
 	"strings"
+
+	. "github.com/leek-box/GoEx"
 )
 
 var (

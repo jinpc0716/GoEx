@@ -3,10 +3,11 @@ package okcoin
 import (
 	"encoding/json"
 	"errors"
-	. "github.com/nntaoli-project/GoEx"
 	"net/http"
 	"net/url"
 	"strconv"
+
+	. "github.com/leek-box/GoEx"
 )
 
 const (

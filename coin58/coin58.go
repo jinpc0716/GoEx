@@ -4,12 +4,13 @@ import (
 	"encoding/base64"
 	"encoding/json"
 	"fmt"
-	. "github.com/nntaoli-project/GoEx"
 	"net/http"
 	"net/url"
 	"sort"
 	"strings"
 	"time"
+
+	. "github.com/leek-box/GoEx"
 )
 
 type Coin58 struct {

@@ -1,9 +1,10 @@
 package gateio
 
 import (
-	"github.com/nntaoli-project/GoEx"
 	"net/http"
 	"testing"
+
+	"github.com/leek-box/GoEx"
 )
 
 var gate = New(http.DefaultClient, "", "")

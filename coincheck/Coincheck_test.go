@@ -1,10 +1,11 @@
 package coincheck
 
 import (
-	. "github.com/nntaoli-project/GoEx"
-	"github.com/stretchr/testify/assert"
 	"net/http"
 	"testing"
+
+	. "github.com/leek-box/GoEx"
+	"github.com/stretchr/testify/assert"
 )
 
 var api = New(http.DefaultClient, "", "")

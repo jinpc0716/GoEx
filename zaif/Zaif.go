@@ -2,11 +2,12 @@ package zaif
 
 import (
 	"fmt"
-	. "github.com/nntaoli-project/GoEx"
 	"log"
 	"net/http"
 	"sort"
 	"strings"
+
+	. "github.com/leek-box/GoEx"
 )
 
 type Zaif struct {
@@ -140,7 +141,7 @@ func (zf *Zaif) GetAccount() (*Account, error) {
 	return nil, nil
 }
 
-func (zf *Zaif) GetKlineRecords(currency CurrencyPair , period int, size, since int) ([]Kline, error) {
+func (zf *Zaif) GetKlineRecords(currency CurrencyPair, period int, size, since int) ([]Kline, error) {
 	return nil, nil
 }
 

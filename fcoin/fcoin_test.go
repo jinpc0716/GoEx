@@ -1,9 +1,10 @@
 package fcoin
 
 import (
-	"github.com/nntaoli-project/GoEx"
 	"net/http"
 	"testing"
+
+	"github.com/leek-box/GoEx"
 )
 
 var ft = NewFCoin(http.DefaultClient, "", "")

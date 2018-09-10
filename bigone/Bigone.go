@@ -2,15 +2,17 @@ package bigone
 
 import (
 	"fmt"
-	. "github.com/nntaoli-project/GoEx"
 	"net/http"
+
+	. "github.com/leek-box/GoEx"
 
 	"encoding/json"
 	"errors"
-	"github.com/google/uuid"
 	"log"
 	"strconv"
 	"time"
+
+	"github.com/google/uuid"
 )
 
 const (

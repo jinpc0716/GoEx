@@ -3,10 +3,11 @@ package okcoin
 import (
 	"encoding/json"
 	"fmt"
-	. "github.com/nntaoli-project/GoEx"
 	"log"
 	"strings"
 	"time"
+
+	. "github.com/leek-box/GoEx"
 )
 
 func (okFuture *OKEx) createWsConn() {

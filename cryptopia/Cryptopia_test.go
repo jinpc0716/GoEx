@@ -1,9 +1,10 @@
 package cryptopia
 
 import (
-	"github.com/nntaoli-project/GoEx"
 	"net/http"
 	"testing"
+
+	"github.com/leek-box/GoEx"
 )
 
 var ctp = New(http.DefaultClient, "", "")

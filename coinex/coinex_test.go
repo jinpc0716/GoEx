@@ -2,9 +2,10 @@ package coinex
 
 import (
 	"fmt"
-	"github.com/nntaoli-project/GoEx"
 	"net/http"
 	"testing"
+
+	"github.com/leek-box/GoEx"
 )
 
 var coinex = New(http.DefaultClient, "", "")

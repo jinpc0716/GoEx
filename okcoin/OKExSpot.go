@@ -4,7 +4,6 @@ import (
 	"encoding/json"
 	"errors"
 	"fmt"
-	. "github.com/nntaoli-project/GoEx"
 	"log"
 	"net/http"
 	"net/url"
@@ -12,6 +11,8 @@ import (
 	"strings"
 	"sync"
 	"time"
+
+	. "github.com/leek-box/GoEx"
 )
 
 type OKExSpot struct {

@@ -1,9 +1,10 @@
 package c_cex
 
 import (
-	"github.com/nntaoli-project/GoEx"
 	"net/http"
 	"testing"
+
+	"github.com/leek-box/GoEx"
 )
 
 var ccex = New(http.DefaultClient, "", "")

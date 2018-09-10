@@ -1,11 +1,12 @@
 package bittrex
 
 import (
+	"errors"
 	"fmt"
-	. "github.com/nntaoli-project/GoEx"
 	"net/http"
 	"sort"
-	"errors"
+
+	. "github.com/leek-box/GoEx"
 )
 
 type Bittrex struct {

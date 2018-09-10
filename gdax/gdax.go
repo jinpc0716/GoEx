@@ -2,9 +2,10 @@ package gdax
 
 import (
 	"fmt"
-	. "github.com/nntaoli-project/GoEx"
 	"net/http"
 	"sort"
+
+	. "github.com/leek-box/GoEx"
 )
 
 //www.coinbase.com or www.gdax.com
